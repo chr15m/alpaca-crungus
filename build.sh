@@ -1,5 +1,5 @@
 # build this repo
-git clone https://github.com/ggerganov/llama.cpp
+[ -d llama.cpp ] || git clone https://github.com/ggerganov/llama.cpp
 cd llama.cpp
 make
 
