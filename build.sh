@@ -1,4 +1,5 @@
 # build this repo
+export PATH=/usr/bin:${PATH}
 [ -d llama.cpp ] || git clone https://github.com/ggerganov/llama.cpp
 cd llama.cpp
 make
