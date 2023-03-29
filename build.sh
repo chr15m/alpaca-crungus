@@ -4,6 +4,11 @@ export PATH=/usr/bin:${PATH}
 cd llama.cpp
 make
 
+# models/llama-7B/ggml-model.bin
+mkdir -p build
+
+aria2c "magnet:?xt=urn:btih:5aaceaec63b03e51a98f04fd5c42320b2a033010&dn=ggml-alpaca-7b-q4.bin&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce"
+
 # obtain the original LLaMA model weights and place them in ./models
 #ls ./models
 #65B 30B 13B 7B tokenizer_checklist.chk tokenizer.model
