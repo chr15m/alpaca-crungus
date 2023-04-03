@@ -4,10 +4,14 @@ export PATH=/usr/bin:${PATH}
 cd llama.cpp
 make
 
-# models/llama-7B/ggml-model.bin
-mkdir -p build
+# download the model from a torrent (4GB)
+[ -f ggml-alpaca-7b-native-q4.bin ] || aria2c --seed-time=0 "magnet:?xt=urn:btih:0e51003c8a5610aa713f675891f0a7f87051be1a&dn=ggml-alpaca-7b-native-q4.bin&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce"
 
-aria2c --seed-time=0 "magnet:?xt=urn:btih:5aaceaec63b03e51a98f04fd5c42320b2a033010&dn=ggml-alpaca-7b-q4.bin&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce"
+# run it:
+# ./main --color -i -ins -n 512 -p "You are a helpful AI who will assist, provide information, answer questions, and have conversations." -m ../ggml-alpaca-7b-native-q4.bin
+
+
+# other stuff that might be useful
 
 # obtain the original LLaMA model weights and place them in ./models
 #ls ./models
